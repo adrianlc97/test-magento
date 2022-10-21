@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 Orba. All rights reserved.
+ * @author    info@orba.co
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="FlatPickupGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Flat\Pickup\Model\ResourceModel\Pickup\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">FlatPickupGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="FlatPickupGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Flat\Pickup\Model\ResourceModel\Pickup\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">flat_pickup_pickup</argument>
+            <argument name="eventPrefix" xsi:type="string">flat_pickup_pickup_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">flat_pickup_pickup_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Flat\Pickup\Model\ResourceModel\Pickup</argument>
+        </arguments>
+    </type>
+</config>

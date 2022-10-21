@@ -1,0 +1,63 @@
+<?php
+/*
+ * @copyright Copyright © 2020 Orba. All rights reserved.
+ * @author    info@orba.co
+ */
+?>
+<?php
+use Magento\Framework\View\Element\Template;
+use Flat\Pickup\ViewModel\Pickup;
+/** @var $viewModel Pickup */
+/** @var $block Template */
+$viewModel = $block->getViewModel();
+$stores = $viewModel->getPickupCollection();
+$imagePath = "Flat_Pickup::images/flat101.png";
+
+
+
+?>
+
+<div class="flat-pickup">
+    <div class="content-title">
+        <h4 class="title"><?php echo __('pickup'); ?></h4>
+    </div>
+
+    <div class="content-stores">
+        <?php foreach($stores as $store): ?>
+            <div class="store-individual">
+                <div class="img">
+                    <img src="<?php echo $this->getViewFileUrl($imagePath); ?>" alt="Producto destacado">
+                </div>
+                <div class="individual-content">
+                    <div class="label"><?= __('Name:')?></div>
+                    <div class="value"><?= $store->getName()?></div>
+                </div>
+                <div class="individual-content">
+                    <div class="label"><?= __('Direction:')?></div>
+                    <div class="value"><?= $store->getDirection()?></div>
+                </div>
+                <div class="individual-content">
+                    <div class="label"><?= __('Latitude:')?></div>
+                    <div class="value"><?= $store->getLatitude()?></div>
+                </div>
+                <div class="individual-content">
+                    <div class="label"><?= __('Longitude:')?></div>
+                    <div class="value"><?= $store->getLongitude()?></div>
+                </div>
+                <div class="individual-content">
+                    <div class="label"><?= __('Location:')?></div>
+                    <div class="value"><?= $viewModel->getLocation($store->getLocation())?></div>
+                </div>
+                <div class="individual-content">
+                    <div class="label"><?= __('Shipping Method:')?></div>
+                    <div class="value"><?= $store->getShippingMethod()?></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+<?php
+
+?>

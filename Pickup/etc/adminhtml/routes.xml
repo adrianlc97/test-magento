@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * routes
+ * @copyright Copyright © 2020 Orba. All rights reserved.
+ * @author    info@orba.co
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="flat_pickup" frontName="flat_pickup">
+            <module name="Flat_Pickup" />
+        </route>
+    </router>
+</config>

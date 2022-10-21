@@ -1,0 +1,44 @@
+.flat-pickup{
+    .content-title{
+        text-align: center;
+        margin: 30px;
+        h4{
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+    }
+    .content-stores {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        @media only screen and (max-width: @screen__xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media only screen and (max-width: @screen__m) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .store-individual{
+            border: solid;
+            margin: 10px;
+            .individual-content {
+                display: flex;
+                margin: 5px;
+                .label {
+                    font-weight: bold;
+                    margin-right: 10px;
+                    &:first-letter{
+                        text-transform: uppercase;
+                    }
+                }
+                .value{
+                    &:first-letter{
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

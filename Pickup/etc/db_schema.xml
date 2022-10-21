@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 Orba. All rights reserved.
+ * @author		info@orba.co
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="flat_pickup_pickup" resource="default" engine="innodb" comment="Pickup Table">
+		<index referenceId="FTI_flat_pickup_pickup" indexType="fulltext">
+			<column name="name"/>
+			<column name="direction"/>
+			<column name="location"/>
+			<column name="shipping_method"/>
+		</index>
+		<column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Pickup Id"/>
+		<column xsi:type="varchar" length="255" nullable="false" name="name" comment="Pickup Name"/>
+		<column xsi:type="varchar" length="255" nullable="false" name="direction" comment="Pickup Direction"/>
+		<column xsi:type="float" unsigned="false" nullable="false" name="latitude" comment="Pickup Latitude"/>
+		<column xsi:type="float" unsigned="false" nullable="false" name="longitude" comment="Pickup Longitude"/>
+		<column xsi:type="varchar" length="255" nullable="false" name="location" comment="Pickup Location"/>
+		<column xsi:type="varchar" length="255" nullable="false" name="shipping_method" comment="Pickup ShippingMethod"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="entity_id"/>
+		</constraint>
+	</table>
+</schema>

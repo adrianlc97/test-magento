@@ -1,0 +1,15 @@
+{
+  "name": "flat/magento2-module-pickup",
+  "require": {
+    "php": "~7.4.0"
+  },
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Flat\\Pickup\\": ""
+    }
+  }
+}

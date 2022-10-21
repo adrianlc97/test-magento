@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * menu
+ * @copyright Copyright © 2020 Orba. All rights reserved.
+ * @author    info@orba.co
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Flat_Pickup::pickup" title="Pickups" module="Flat_Pickup" sortOrder="10" parent="Magento_Backend::content" action="flat_pickup/pickup" resource="Flat_Pickup::pickup"/>
+    </menu>
+</config>
